@@ -1,4 +1,4 @@
-package webproject.ticket.domain;
+package webproject.ticket.domain.show;
 
 
 import lombok.Getter;
@@ -15,6 +15,6 @@ public class Place {
     private Long place_id;
 
     private String location;
-    private Seat seat;
+//    private Seat seat;
 }
 

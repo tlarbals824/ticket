@@ -1,4 +1,4 @@
-package webproject.ticket.domain;
+package webproject.ticket.domain.board;
 
 
 import javax.persistence.Column;
