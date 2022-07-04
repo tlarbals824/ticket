@@ -5,26 +5,23 @@ package webproject.ticket.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import webproject.ticket.domain.member.Member;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
 @Getter @Setter
 public class Show {
 
-    @Id @GeneratedValue
-    @Column(name="show_id")
-    private Long id;
-    @Column(name="show_date")
-    private Date date;
+    @Id
+    private Long show_id;
+
+    private Date show_date;
     private int max;
     private int price;
-    @Column(name="show_name")
-    private String name;
+    private String show_name;
     private Category category;
-
     private Member member_id;
     private Place place_id;
 
