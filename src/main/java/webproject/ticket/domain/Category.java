@@ -1,6 +1,6 @@
 package webproject.ticket.domain;
 
-public enum Category1 {
+public enum Category {
 
     CONCERT, MUSICAL, SPORTS
 }
