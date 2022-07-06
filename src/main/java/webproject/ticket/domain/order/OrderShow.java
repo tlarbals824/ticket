@@ -19,8 +19,8 @@ public class OrderShow {
 
     private int showPrice;
 
-    public void cancel() {
-        //공연 좌석 수 원복
-        //getShow.addSeat?Stock(1);..?
-    }
+//    public void cancel() {
+//        //공연 좌석 수 원복
+//        //getShow.addSeat?Stock(1);..?
+//    }
 }
