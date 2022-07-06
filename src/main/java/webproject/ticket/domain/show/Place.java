@@ -17,7 +17,8 @@ public class Place {
     @Column(name="place_id")
     private Long place_id;
 
-    private String location;
-//    private Seat seat;
+    private String location;    //장소
+    private String seat;        //좌석 번호
+
 }
 
