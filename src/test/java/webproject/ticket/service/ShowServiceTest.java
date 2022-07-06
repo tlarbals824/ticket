@@ -22,7 +22,7 @@ public class ShowServiceTest {
     @Transactional
     public void 공연생성() {
 
-       Show show = new Show("sho0w",100, 10000, Category.SPORTS);
+       Show show = new Show("show",100, 10000, Category.SPORTS);
        showRepository.register(show);
 
 
