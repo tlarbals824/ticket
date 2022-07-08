@@ -17,7 +17,7 @@ public class Order {
 
     @Id @GeneratedValue
     @Column(name = "order_id")
-    private Long order_id;
+    private Long id;
 
     private Member member;
 
