@@ -15,7 +15,7 @@ public class OrderShow {
     @Column(name = "order_show_id")
     private Long id;
 
-    private Show show;
+//    private Show show;
 
     private int showPrice;
 

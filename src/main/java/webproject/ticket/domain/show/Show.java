@@ -10,12 +10,13 @@ import lombok.Setter;
 import webproject.ticket.domain.show.Category;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
 @Getter @Setter
 @Table(name = "SHOWS")
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Show {
 
     @Id
@@ -25,15 +26,26 @@ public class Show {
     @Column(name="show_name")
     private String showName;
     @Column(name="show_date")
-    private Date showDate;
-    private int max;
+    private LocalDateTime showDate;
+    private String location;    //장소
+    private int maxSeat;
+    private int currentSeat;
     private int price;
     @Enumerated(EnumType.STRING)
     private Category category;
-//    private Member member_id;
-//    private Place place_id;
 
 
+
+
+    public Show(String showName, LocalDateTime showDate, String location, int maxSeat, int currentSeat, int price, Category category) {
+        this.showName = showName;
+        this.showDate = showDate;
+        this.location = location;
+        this.maxSeat = maxSeat;
+        this.currentSeat = currentSeat;
+        this.price = price;
+        this.category = category;
+    }
 
 
 }
