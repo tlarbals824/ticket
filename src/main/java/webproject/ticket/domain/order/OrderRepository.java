@@ -1,4 +1,4 @@
-package webproject.ticket.domain.order;
+/*package webproject.ticket.domain.order;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -20,3 +20,4 @@ public class OrderRepository {
         return em.find(Order.class, id);
     }
 }
+*/

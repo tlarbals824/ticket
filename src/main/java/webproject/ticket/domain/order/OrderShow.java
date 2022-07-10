@@ -1,4 +1,4 @@
-package webproject.ticket.domain.order;
+/*package webproject.ticket.domain.order;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,3 +24,4 @@ public class OrderShow {
         //getShow.addSeat?Stock(1);..?
     }
 }
+*/
