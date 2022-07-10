@@ -1,4 +1,4 @@
-package webproject.ticket.domain.order;
+/*package webproject.ticket.domain.order;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -33,7 +33,7 @@ public class Order {
 
     public void addShowItem(OrderShow orderShow) {
         orderShows.add(orderShow);
-        orderShow.setShow(this);
+        //orderShow.setShow(this);
     }
 
     //생성 메서드
@@ -54,3 +54,4 @@ public class Order {
         }
     }
 }
+*/
