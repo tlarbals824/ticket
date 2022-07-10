@@ -15,10 +15,12 @@ public class MemberController {
 
     private final MemberService memberService;
 
+
     @GetMapping("/member/signup")
     public String signUpPage() {
         return "/member/signup";
     }
+
 
     @PostMapping("/member/signup")
     public String signUp(@ModelAttribute Member member) {

@@ -2,6 +2,10 @@ package webproject.ticket.service.board;
 
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import webproject.ticket.domain.board.*;
@@ -18,9 +22,11 @@ public class BoardServiceV1 {
 
     //게시글 작성
     @Transactional
-    public void create(BoardDTO board){
-        Board saveBoard = new Board(board.getTitle(), board.getContent(), board.getBoardDate());
+    public Board create(BoardDTO board){
+        Board saveBoard = Board.createBoard(board.getTitle(),board.getContent());
+//        Board saveBoard = new Board(board.getTitle(),board.getContent(),LocalDateTime.now());
         boardJpaRepository.save(saveBoard);
+        return saveBoard;
     }
 
     //게시글 보기
@@ -56,4 +62,10 @@ public class BoardServiceV1 {
     }
 
 
+    public Page<Board> getBoardList(Pageable pageable,int amount){
+        int page = (pageable.getPageNumber() == 0) ? 0 : (pageable.getPageNumber() - 1);
+        pageable = PageRequest.of(page,amount,Sort.by("boardDate").descending());
+
+        return boardJpaRepository.findAll(pageable);
+    }
 }

@@ -31,7 +31,6 @@ public class Board {
     public Board(String title, String content) {
         this.title = title;
         this.content = content;
-        this.boardDate=LocalDateTime.now();
     }
 
     public Board(String title, String content, LocalDateTime boardDate) {
@@ -55,10 +54,17 @@ public class Board {
     public void update(BoardDTO newBoard){
         this.title=newBoard.getTitle();
         this.content=newBoard.getContent();
-        this.boardDate=newBoard.getBoardDate();
+        this.boardDate=LocalDateTime.now();
     }
 
     public void increaseReadCount(){
         this.readCount++;
+    }
+
+    public static Board createBoard(String title,String content){
+        Board board = new Board(title, content);
+        board.setReadCount(0);
+        board.setBoardDate(LocalDateTime.now());
+        return board;
     }
 }
