@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import webproject.ticket.service.MemberService;
 import webproject.ticket.service.order.OrderService;
+import webproject.ticket.service.show.ShowService;
 
 @Controller
 @RequiredArgsConstructor
