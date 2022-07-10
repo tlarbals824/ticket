@@ -1,8 +1,9 @@
-/*package webproject.ticket.domain.order;
+package webproject.ticket.domain.order;
 
 import lombok.Getter;
 import lombok.Setter;
 import webproject.ticket.domain.member.Member;
+import webproject.ticket.domain.show.Show;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -17,41 +18,48 @@ public class Order {
 
     @Id @GeneratedValue
     @Column(name = "order_id")
-    private Long order_id;
+    private Long id;
 
     private Member member;
 
-    private List<OrderShow> orderShows = new ArrayList<>();
+//    private List<OrderShow> orderShows = new ArrayList<>();
+
+    private Show show;
 
     private LocalDateTime orderDate;
 
     //연관관계 메서드
     public void setMember(Member member) {
         this.member = member;
-        //member.getShows().add(this);
+        //member.getShow().add(this);
     }
 
-    public void addShowItem(OrderShow orderShow) {
-        orderShows.add(orderShow);
-        //orderShow.setShow(this);
+//    public void addShowItem(OrderShow orderShow) {
+//        orderShows.add(orderShow);
+//        orderShow.setShow(this);
+//    }
+
+    public void setShow(Show show) {
+        this.show = show;
+//        show.getMember().add(this);
     }
+
 
     //생성 메서드
-    public static Order createOrder(Member member, OrderShow... orderShows) {
+    public static Order createOrder(Member member, Show show) {
         Order order = new Order();
         order.setMember(member);
-        for (OrderShow orderShow : orderShows) {
-            order.addShowItem(orderShow);
-        }
+        order.setShow(show);
         order.setOrderDate(LocalDateTime.now());
         return order;
     }
 
     //비즈니스 로직
     public void cancel() {
-        for (OrderShow orderShow : orderShows) {
-            orderShow.cancel();
-        }
+//        for (OrderShow orderShow : orderShows) {
+//            orderShow.cancel();
+//        }
+        //getShow().좌석 수 + 1?
+        //
     }
 }
-*/

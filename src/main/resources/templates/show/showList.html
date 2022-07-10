@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>공연 목록</title>
+</head>
+<body>
+
+<h1>공연 목록</h1>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>공연 이름</th>
+            <th>공연 날짜</th>
+            <th>장소</th>
+            <th>최대 좌석</th>
+            <th>현재 남은 좌석</th>
+            <th>가격</th>
+            <th>공연 종류</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="show : ${shows}">
+            <td th:text="${show.id}"></td>
+            <td th:text="${show.showName}"></td>
+            <td th:text="${show.showDate}"></td>
+            <td th:text="${show.location}"></td>
+            <td th:text="${show.maxSeat}"></td>
+            <td th:text="${show.currentSeat}"></td>
+            <td th:text="${show.price}"></td>
+            <td th:text="${show.category}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
