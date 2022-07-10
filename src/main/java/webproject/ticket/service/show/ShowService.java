@@ -1,11 +1,14 @@
-package webproject.ticket.service;
+package webproject.ticket.service.show;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import webproject.ticket.domain.show.Category;
 import webproject.ticket.domain.show.Show;
+import webproject.ticket.domain.show.ShowJpaRepository;
 import webproject.ticket.domain.show.ShowRepository;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -14,9 +17,11 @@ import java.util.List;
 public class ShowService {
 
     private final ShowRepository showRepository;
+    private final ShowJpaRepository showJpaRepository;
 
+    @Transactional
     public Long registerShow(Show show) {
-        showRepository.register(show);
+        showRepository.save(show);
         return show.getId();
     }
 
@@ -30,7 +35,7 @@ public class ShowService {
     }
 
     public List<Show> findPrepareShow() {
-        return showRepository.findPrepare();
+        return showJpaRepository.findByShowDateGreaterThan(LocalDateTime.now());
     }
 
 
